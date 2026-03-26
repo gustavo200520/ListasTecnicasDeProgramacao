@@ -10,20 +10,12 @@ public class Ex12 {
 		if(n==0) {
 			System.out.println(1);
 		}
-		else if(n>0) {
+		else {
 		
 			for(int cont=1;cont<n;cont++) {
 				x = x*base;
 			}
 			System.out.println(x);
-		}
-		else {
-			 float resultado = 1;
-	            for(int cont = 0; cont < -n; cont++) {
-	                resultado = resultado* base;
-	            }
-	            resultado = 1 / resultado;
-	            System.out.println(resultado);
 		}
 	}
 }
