@@ -10,7 +10,7 @@ public class Ex14 {
 			System.out.println("Erro");
 		}
 		else {
-			for(int cont=2;cont<=n;cont++) {
+			for(int cont=1;cont<=n;cont++) {
 				H = H + 1.0f/cont;
 			}
 			System.out.printf("H = %.2f\n",H);
