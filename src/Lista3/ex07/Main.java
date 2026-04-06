@@ -6,7 +6,7 @@ public class Main {
 		Scanner teclado = new Scanner(System.in);
 		ArrayList<Livro> listaLivro = new ArrayList<>();
 		int opcoes;
-		System.out.println("1. Cadastrar livro\n2. Listar livros\n3. Emprestar livro\n4. Devolver livro\n5. Sair");
+		System.out.println("1. Cadastrar livro\n2. Listar livros\n3. Pegar emprestado o livro\n4. Devolver livro\n5. Sair");
 		opcoes = teclado.nextInt();
 		while(opcoes>0 && opcoes<5) {
 			if(opcoes==1) {
@@ -69,7 +69,7 @@ public class Main {
 					System.out.println("Esse livro nao foi cadastrado");
 				}
 			}
-			System.out.println("1. Cadastrar livro\n2. Listar livros\n3. Emprestar livro\n4. Devolver livro\n5. Sair");
+			System.out.println("1. Cadastrar livro\n2. Listar livros\n3. Pegar emprestado o livro\n4. Devolver livro\n5. Sair");
 			opcoes = teclado.nextInt();
 		}
 	}
