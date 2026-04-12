@@ -3,8 +3,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class Carrinho {
 	
-	public double total=0, valor;
-	public ArrayList<Itens> listaItens = new ArrayList<>();
+	public  double total=0, valor;
+	public  ArrayList<Itens> listaItens = new ArrayList<>();
 
 	
 	public  void adicionarIten(Scanner teclado) {
