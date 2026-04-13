@@ -24,6 +24,7 @@ public class Carrinho {
 	//------------------------------------------------
 	public  void removerItens(Scanner teclado) {
 		String remover;
+		boolean removido=false;
 		teclado.nextLine();
 		System.out.println("Insira o codigo ou nome do produto que voce deseja remover");
 		remover = teclado.nextLine();
@@ -32,7 +33,11 @@ public class Carrinho {
 				total=total-listaItens.get(cont).getValor();
 				listaItens.remove(cont);
 				System.out.println("Iten removido com sucesso\n");
+				removido = true;
 			}
+		}
+		if(removido==false) {
+			System.out.println("Esse produto nao foi cadastrado\n");
 		}
 	}
 	//------------------------------------------------
