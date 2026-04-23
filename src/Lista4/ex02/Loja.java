@@ -28,13 +28,39 @@ public class Loja {
 		
 	}
 	
+	
 	public void listarProdutos() {
 		for(Produto produto : listaProduto) {
-			System.out.println("Nome: "+produto.getNome());
-			System.out.println("Preco: "+produto.getPreco());
-			System.out.println("Quantidade: "+produto.getQuantidade());
-			System.out.println("--------------------------------");
+			produto.exibirDados();
+			System.out.println("-------------------------");
 		}
 	}
 	
+	public Produto buscarProduto(String nome) {
+		boolean achou=false;
+		for(Produto produto : listaProduto) {
+			if(nome.equals(produto.getNome())) {
+				achou=true;
+				return produto;
+			}
+		}
+		if(achou) {
+			System.out.println("Produto encontrado");
+		}
+		else {
+			System.out.println("Produto nao encontrado");
+		}
+		return null;
+	}
+	
+	public void venderProduto(String nome, int qtd) {
+		if(buscarProduto(nome)!=null) {
+			for(Produto produto : listaProduto) {
+				if(nome.equals(produto.getNome())) {
+					produto.diminuirEstoque(qtd);
+					
+				}
+			}
+		}
+	}
 }

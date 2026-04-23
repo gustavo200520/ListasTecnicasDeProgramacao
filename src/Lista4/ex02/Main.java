@@ -2,20 +2,21 @@ package Lista4.ex02;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-//ver oq falta como na parte de vender o produto, calcular o total e etc
+
 public class Main {
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
 		int qtd;
 		Loja novaLoja = new Loja();
+		Venda novaVenda = new Venda();
 		System.out.println("Insira o nome da loja: ");
 		novaLoja.setNomeLoja(teclado.nextLine());
 		System.out.println("Insira a quantidade de produtos que deseja adicionar: ");
 		qtd= teclado.nextInt();
 		
-		for(int cont=0;cont<qtd;cont++) {
+		for(int cont=1;cont<=qtd;cont++) {
 			Produto produto = new Produto();
-			System.out.println("Insira o nome do produto: ");
+			System.out.println("Insira o nome do produto "+cont+" :");
 			teclado.nextLine();
 			produto.setNome(teclado.nextLine());
 			System.out.println("Insira o preco: ");
@@ -26,5 +27,18 @@ public class Main {
 		}
 		
 		novaLoja.listarProdutos();
+		teclado.nextLine();
+		System.out.println("Insira o nome produto que deseja vender e a quantidade: ");
+		String nome=teclado.nextLine();
+		int quantidade = teclado.nextInt();
+		novaLoja.venderProduto(nome,quantidade);
+		
+		if(novaLoja.buscarProduto(nome)!=null && novaLoja.buscarProduto(nome).getQuantidade()>=quantidade) {
+
+			
+			novaVenda.setQuantidadeVendida(quantidade);
+			novaVenda.exibirVenda(novaLoja.buscarProduto(nome), quantidade);
+		}
+		
 	}	
 }
