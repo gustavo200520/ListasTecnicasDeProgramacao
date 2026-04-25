@@ -1,9 +1,9 @@
 package Lista4.ex02;
 
 public class Venda {
-	public int quantidadeVendida;
-	public double total;
-	Produto produto;
+	private int quantidadeVendida;
+	private double total;
+	private Produto produto;
 	
 	public Produto getProduto() {
 		return produto;
@@ -37,6 +37,6 @@ public class Venda {
 		System.out.println("Valor total da venda: "+calcularTotal(produto));
 		System.out.println("Quantidade restante no estoque: "+produto.getQuantidade());
 		System.out.println("-------------------------------------");
-
+		System.out.println("Saindo...");
 	}
 }

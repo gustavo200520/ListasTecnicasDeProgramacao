@@ -9,6 +9,7 @@ public class Main {
 		int qtd;
 		Loja novaLoja = new Loja();
 		Venda novaVenda = new Venda();
+		
 		System.out.println("Insira o nome da loja: ");
 		novaLoja.setNomeLoja(teclado.nextLine());
 		System.out.println("Insira a quantidade de produtos que deseja adicionar: ");
@@ -27,6 +28,7 @@ public class Main {
 		}
 		
 		novaLoja.listarProdutos();
+		
 		teclado.nextLine();
 		System.out.println("Insira o nome produto que deseja vender e a quantidade: ");
 		String nome=teclado.nextLine();
@@ -35,6 +37,18 @@ public class Main {
 		boolean vendaRealizada = novaLoja.venderProduto(nome, quantidade, novaVenda);
 		if(!vendaRealizada) {
 		    System.out.println("Venda não realizada.");
+		}
+		
+		while(!vendaRealizada){
+			teclado.nextLine();
+			System.out.println("Insira o nome produto que deseja vender e a quantidade: ");
+			nome=teclado.nextLine();
+			quantidade = teclado.nextInt();
+		
+			vendaRealizada = novaLoja.venderProduto(nome, quantidade, novaVenda);
+			if(!vendaRealizada) {
+				System.out.println("Venda não realizada.");
+			}
 		}
 		
 	}	

@@ -31,10 +31,6 @@ public class Produto {
 	}
 	
 	public void diminuirEstoque(int qtd) {
-		if(quantidade>=qtd) {
-			quantidade = quantidade - qtd;
-			
-		}
-		else System.out.println("Quantidade maior que o estoque");
+		quantidade = quantidade - qtd;
 	}
 }

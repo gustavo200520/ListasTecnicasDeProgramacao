@@ -62,7 +62,7 @@ public class Loja {
 
 	    produto.diminuirEstoque(qtd);
 
-	    venda.setQuantidadeVendida(qtd);
+	    venda.setQuantidadeVendida(qtd);//poder calcular o total
 	    venda.exibirVenda(produto, qtd);
 
 	    return true;
