@@ -37,30 +37,34 @@ public class Loja {
 	}
 	
 	public Produto buscarProduto(String nome) {
-		boolean achou=false;
 		for(Produto produto : listaProduto) {
-			if(nome.equals(produto.getNome())) {
-				achou=true;
+			if(nome.equalsIgnoreCase(produto.getNome())) {
 				return produto;
 			}
 		}
-		if(achou) {
-			System.out.println("Produto encontrado");
-		}
-		else {
-			System.out.println("Produto nao encontrado");
-		}
+		
 		return null;
 	}
 	
-	public void venderProduto(String nome, int qtd) {
-		if(buscarProduto(nome)!=null) {
-			for(Produto produto : listaProduto) {
-				if(nome.equals(produto.getNome())) {
-					produto.diminuirEstoque(qtd);
-					
-				}
-			}
-		}
+	
+	public boolean venderProduto(String nome, int qtd, Venda venda) {
+	    Produto produto = buscarProduto(nome);
+
+	    if(produto == null) {
+	        System.out.println("Produto não encontrado.");
+	        return false;
+	    }
+
+	    if(produto.getQuantidade() < qtd) {
+	        System.out.println("Estoque insuficiente.");
+	        return false;
+	    }
+
+	    produto.diminuirEstoque(qtd);
+
+	    venda.setQuantidadeVendida(qtd);
+	    venda.exibirVenda(produto, qtd);
+
+	    return true;
 	}
 }

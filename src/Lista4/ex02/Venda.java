@@ -18,7 +18,6 @@ public class Venda {
 		this.quantidadeVendida = quantidadeVendida;
 	}
 	public double getTotal() {
-		total = 0;
 		return total;
 	}
 	public void setTotal(double total) {
@@ -26,15 +25,18 @@ public class Venda {
 	}
 	
 	public double calcularTotal(Produto produto) {
-		total = total + quantidadeVendida * produto.getPreco();
+		total = quantidadeVendida * produto.getPreco();
 		return total;
 	}
 	
 	public void exibirVenda(Produto produto, int qtd) {
+		System.out.println("-------------------------------------");
 		System.out.println("Nome do produto vendido: "+produto.getNome());
-		System.out.println("Preco do produto: "+produto.getPreco());
+		System.out.println("Preco do produto: R$ "+produto.getPreco());
 		System.out.println("Quantidade vendida: "+qtd);
 		System.out.println("Valor total da venda: "+calcularTotal(produto));
 		System.out.println("Quantidade restante no estoque: "+produto.getQuantidade());
+		System.out.println("-------------------------------------");
+
 	}
 }

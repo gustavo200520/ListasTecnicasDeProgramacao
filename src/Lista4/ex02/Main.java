@@ -31,13 +31,10 @@ public class Main {
 		System.out.println("Insira o nome produto que deseja vender e a quantidade: ");
 		String nome=teclado.nextLine();
 		int quantidade = teclado.nextInt();
-		novaLoja.venderProduto(nome,quantidade);
 		
-		if(novaLoja.buscarProduto(nome)!=null && novaLoja.buscarProduto(nome).getQuantidade()>=quantidade) {
-
-			
-			novaVenda.setQuantidadeVendida(quantidade);
-			novaVenda.exibirVenda(novaLoja.buscarProduto(nome), quantidade);
+		boolean vendaRealizada = novaLoja.venderProduto(nome, quantidade, novaVenda);
+		if(!vendaRealizada) {
+		    System.out.println("Venda não realizada.");
 		}
 		
 	}	
